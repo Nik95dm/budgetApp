@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres:
+    image: "postgres"
+#   Maps port 54320 (localhost) to port 5432 on the container.
+    ports:
+      - 54320:5432
+#   Set a volume some that database is not lost after shutting down the container.
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+      - ./data/tmp:/tmp2
+#   Setup the username, password, and database name.
+    environment:
+      - POSTGRES_DB=budget
+      - POSTGRES_USER=budget
+      - POSTGRES_PASSWORD=budget
+
