@@ -2,6 +2,7 @@ version: '3'
 services:
   postgres:
     image: "postgres"
+    container_name: "budget-psql"
     ports:
       - 54320:5432
     volumes:
